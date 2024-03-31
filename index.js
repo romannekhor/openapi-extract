@@ -141,6 +141,7 @@ function extract(obj, options) {
     for (let p in paths) {
         if (obj.paths[p] && obj.paths[p].parameters) {
             src.paths[p].parameters = clone(obj.paths[p].parameters);
+            deref(src.paths[p].parameters,src,obj);
         }
     }
 
